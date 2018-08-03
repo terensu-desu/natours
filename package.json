@@ -1,0 +1,15 @@
+{
+  "name": "natours",
+  "version": "0.0.1",
+  "description": "Natural Tours landing page",
+  "main": "index.js",
+  "scripts": {
+    "compile:sass": "node-sass sass/main.scss css/style.css -w"
+  },
+  "author": "Terence Mangram",
+  "license": "ISC",
+  "devDependencies": {
+    "node-sass": "^4.9.2"
+  },
+  "dependencies": {}
+}
