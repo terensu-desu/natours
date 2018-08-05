@@ -13,19 +13,33 @@
 	&__content {
 		@include center-horizontal-vertical;
 		background-color: $color-white;
-		width:75%;
+		background-image: linear-gradient(
+			100deg, transparent 0%, 
+			transparent 33%, 
+			rgba($color-white, .9) 33%), 
+			url(../img/nat-6.jpg);
+		background-size: cover;
 		border-radius: $default-border-radius;
-		box-shadow: 0 2rem 4rem rgba($color-black, .2);
+		box-shadow: 0 1.5rem 4rem rgba($color-black, .2);
+		width:75%;
 		display: table;
 		overflow: hidden;
 		opacity: 0;
 		transform: translate(-50%, -50%) scale(.25);
 		transition: all .4s .2s;
+
+		@include respond(tab-land) {
+			background-image: none;
+		}
 	}
 
 	&__left {
 		width: 33.333333%;
 		display: table-cell;
+
+		@include respond(tab-land) {
+			display: none;
+		}
 	}
 
 	&__right {
@@ -33,12 +47,10 @@
 		display: table-cell;
 		vertical-align: middle;
 		padding: 3rem 5rem;
-
-	}
-
-	&__image {
-		display: block;
-		width: 100%;
+		
+		@include respond(tab-land) {
+			padding: 5rem 6rem;
+		}
 	}
 
 	&__text {
@@ -57,6 +69,16 @@
 		-ms-hyphens: auto;
 		-webkit-hyphens: auto;
 		hyphens: auto;
+
+		@include respond(phone) {
+			-moz-column-count: 1;
+			-moz-column-gap: 0;
+			-moz-column-rule: none;
+
+			column-count: 1;
+			column-gap: 0;
+			column-rule: none;
+		}
 	}
 
 	// FUNCTIONALITY
